@@ -9,7 +9,7 @@ unless (-e "CorGAT")
 #}
 
 {
-   system("wget -i https://raw.githubusercontent.com/matteo14c/CorGAT_galaxy/dev/ann.txt")==0||die();
+   system("wget -i https://raw.githubusercontent.com/matteo14c/CorGAT_galaxy/dev/ann.txt");
 }
 
 
