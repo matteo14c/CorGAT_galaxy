@@ -1,11 +1,11 @@
 $fss=13468;
 
-unless (-e "SARS-CoV-2_annot")
+unless (-e "CorGAT")
 {
-	system("git clone https://github.com/matteo14c/SARS-CoV-2_annot.git")==0||die();
-	system("rm SARS-CoV-2_annot/annotate.pl")==0||die();
-	system("mv SARS-CoV-2_annot/* .")==0||die();
-	system("rm -rf SARS-CoV-2_annot")==0||die();
+        system("git clone https://github.com/matteo14c/CorGAT.git")==0||die();
+        system("rm CorGAT/annotate.pl")==0||die();
+        system("mv CorGAT/* .")==0||die();
+        system("rm -rf CorGAT")==0||die();
 }
 
 $gen_code="genetic_code";
