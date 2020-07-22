@@ -1,0 +1,42 @@
+<tool id="nucmer_snp" name="nucmer_snp" version="">
+  <description></description>
+  <requirements>
+    <requirement type="package" version="4.0.0beta2-5" >mummer4</requirement>
+    <requirement type="package" >mesa-libgl-devel-cos7-aarch64</requirement>
+  </requirements>
+  <command>
+ <![CDATA[
+ nucmer --prefix=ref_qry $reference $genome2 &&
+
+ show-snps -Clr ./ref_qry.delta > $output_file
+
+  ]]>
+  </command>
+
+  <inputs>
+    <param name="reference" format="fasta" type="data" label="Reference genome fasta file" help="reference SARS-CoV-2 genome " />
+    <param name="genome2" format="fasta" type="data" label="Genome fasta" help="input genome for nucmer " />
+  </inputs>
+  <outputs>
+    <data format="tsv" name="output_file" label="Variant file in nucmer format" />
+  </outputs>
+  <stdio>
+    <exit_code range="1:" level="fatal" />
+  </stdio>
+  <help>
+	**What it does**
+
+	This simple wrapper is used to align a SARS-CoV-2 genome assembly to the reference genome as available from Genbank (NC_045512).
+	A copy of the genome, is also found on this Galaxy server under Shared Data -> Data Libraries -> SARS-CoV-2-REF.
+	This wrapper run nucmer with default parameters to align genomes. Variants are extracted from the nucmer delta file by the
+	show-snps utility.
+	Output files obtained from this software should be concatenated with the join_nucmer utility before functional annotation.
+  
+  </help>
+
+  <tests>
+    <test>
+    </test>
+  </tests>
+
+</tool>
