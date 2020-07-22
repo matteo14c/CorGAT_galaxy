@@ -2,4 +2,5 @@ https://raw.githubusercontent.com/matteo14c/CorGAT/master/MFE_annot.csv
 https://raw.githubusercontent.com/matteo14c/CorGAT/master/af_data_new.csv
 https://raw.githubusercontent.com/matteo14c/CorGAT/master/epitopes_annot.csv 
 https://raw.githubusercontent.com/matteo14c/CorGAT/master/hyphy_novel.csv  
+https://raw.githubusercontent.com/matteo14c/CorGAT/master/genetic_code
 
