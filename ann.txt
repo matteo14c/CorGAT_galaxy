@@ -1,3 +1,4 @@
+https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/858/895/GCF_009858895.2_ASM985889v3/GCF_009858895.2_ASM985889v3_genomic.fna.gz
 https://raw.githubusercontent.com/matteo14c/CorGAT/master/MFE_annot.csv
 https://raw.githubusercontent.com/matteo14c/CorGAT/master/af_data_new.csv
 https://raw.githubusercontent.com/matteo14c/CorGAT/master/epitopes_annot.csv 

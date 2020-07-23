@@ -1,15 +1,10 @@
 $fss=13468;
 
 unless (-e "CorGAT")
-#{
-#        system("git clone https://github.com/matteo14c/CorGAT.git")==0||die();
-#        system("rm CorGAT/annotate.pl")==0||die();
-#        system("mv CorGAT/* .")==0||die();
-#        system("rm -rf CorGAT")==0||die();
-#}
 
 {
    system("wget -i https://raw.githubusercontent.com/matteo14c/CorGAT_galaxy/dev/ann.txt");
+   system("gzip -d *.gz");
 }
 
 
