@@ -15,7 +15,7 @@
 	<param name="infile" format="txt" type="data" label="merged show-snps tabular ouput" help="annotates SARS-CoV-2 variants" />
   </inputs>
   <outputs>
-	<data format="tsv" name="outfile" label="Functional annotation of SARS-CoV-2 genomes in tabular format " />
+	<data format="tsv" name="outfile" label="${tool.name} on ${on_string}: Functional annotation of SARS-CoV-2 genomes in tabular format " />
 	<data format="txt" name="log" label="${tool.name} on ${on_string}: log file "/>
   </outputs>
   <help>
