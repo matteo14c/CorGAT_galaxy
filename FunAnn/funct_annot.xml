@@ -3,6 +3,7 @@
   <requirements>
     <requirement type="package" >perl</requirement>
     <requirement type="package" >wget</requirement>
+    <requirement type="package" >gzip</requirement>
   </requirements>
   <command> <![CDATA[
       ## ln -s $__tool_directory__/GCA_009858895.3_ASM985889v3_genomic.fna 2>>$log &&

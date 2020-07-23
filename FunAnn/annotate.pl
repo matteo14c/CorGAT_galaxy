@@ -4,7 +4,7 @@ unless (-e "CorGAT")
 
 {
    system("wget -i https://raw.githubusercontent.com/matteo14c/CorGAT_galaxy/dev/ann.txt");
-   system("gzip -d *.gz");
+   system("gzip -d GCF_009858895.2_ASM985889v3_genomic.fna.gz");
 }
 
 
@@ -19,8 +19,8 @@ while(<IN>)
 	$code{$triplet}=$oneL;
 }
 
-$genome="GCA_009858895.3_ASM985889v3_genomic.fna";
-die("need reference genome file in the current folder\n") unless -e "GCA_009858895.3_ASM985889v3_genomic.fna";
+$genome="GCF_009858895.2_ASM985889v3_genomic.fna";
+die("need reference genome file in the current folder\n") unless -e "GCF_009858895.2_ASM985889v3_genomic.fna";
 open(IN,$genome);
 while(<IN>)
 {
