@@ -28,4 +28,4 @@ Galaxy tools and wrappers for `CorGAT <https://github.com/matteo14c/CorGAT>`_
 :Description:
        This program reads a tabular formatted file, in pseudo vcf format, as obtained from the **join_nucmer** utility and performs functional annotation of SARS-CoV-2 variants. Please notice that the program performs minimum error checks, and that it is designed to work exclusively with the reference annotation of the SARS-CoV-2 genome as available from Genbank.
  
-:Galaxy wrapper:`FunAnn <https://testtoolshed.g2.bx.psu.edu/repository?repository_id=0e8d0775db86a736>`_
+:Galaxy wrapper: `FunAnn <https://testtoolshed.g2.bx.psu.edu/repository?repository_id=0e8d0775db86a736>`_
