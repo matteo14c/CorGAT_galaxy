@@ -10,7 +10,7 @@ WORKDIR /galaxy-central
 
 RUN add-tool-shed --url 'http://testtoolshed.g2.bx.psu.edu/' --name 'Test Tool Shed'
 
-RUN wget https://gist.githubusercontent.com/pmandreoli/2a08f107179b2e4879bd55fedeca5668/raw/cbb0727171b6e099f447773f929c2d5d6243253d/galaxy-CorGAT-tool-list.yml -O $GALAXY_ROOT/tools1.yaml
+RUN wget https://raw.githubusercontent.com/matteo14c/CorGAT_galaxy/master/Docker/galaxy-CorGAT-tool-list.yml -O $GALAXY_ROOT/tools1.yaml
 
 RUN install-tools $GALAXY_ROOT/tools1.yaml && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
