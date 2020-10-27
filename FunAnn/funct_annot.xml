@@ -6,7 +6,6 @@
     <requirement type="package" >gzip</requirement>
   </requirements>
   <command> <![CDATA[
-      ## ln -s $__tool_directory__/GCA_009858895.3_ASM985889v3_genomic.fna 2>>$log &&
         cp $__tool_directory__/annotate.pl . 2>>$log &&
 	perl annotate.pl $infile $outfile 2>>$log
           ]]>

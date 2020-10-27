@@ -1,5 +1,5 @@
 <tool id="nucmer_snp" name="nucmer_snp" version="">
-  <description></description>
+  <description>Align single fasta files to SARS-CoV-2 genome and call genetic variants</description>
   <requirements>
     <requirement type="package" version="4.0.0beta2-5" >mummer4</requirement>
     <requirement type="package" >mesa-libgl-devel-cos7-aarch64</requirement>

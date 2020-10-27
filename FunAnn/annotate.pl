@@ -7,9 +7,6 @@ unless (-e "CorGAT")
    system("gzip -d GCF_009858895.2_ASM985889v3_genomic.fna.gz");
 }
 
-
-
-
 $gen_code="genetic_code";
 die("need genetic code file in the current folder\n") unless -e "genetic_code";
 open(IN,$gen_code);
@@ -19,8 +16,8 @@ while(<IN>)
 	$code{$triplet}=$oneL;
 }
 
-$genome="GCF_009858895.2_ASM985889v3_genomic.fna";
-die("need reference genome file in the current folder\n") unless -e "GCF_009858895.2_ASM985889v3_genomic.fna";
+$genome="GCA_009858895.3_ASM985889v3_genomic.fna";
+die("need reference genome file in the current folder\n") unless -e "GCA_009858895.3_ASM985889v3_genomic.fna";
 open(IN,$genome);
 while(<IN>)
 {

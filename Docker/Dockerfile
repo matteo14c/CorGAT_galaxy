@@ -1,16 +1,22 @@
 # Galaxy - CorGAT
 
-FROM bgruening/galaxy-stable:19.01
+FROM bgruening/galaxy-stable:20.05
 
 MAINTAINER Pietro Mandreoli, pietro.mandreoli@unimi.it
 
 ENV GALAXY_CONFIG_BRAND="CorGAT"
+
+RUN apt-get update && apt-get upgrade -y
+
+RUN apt-get install wget -y
 
 WORKDIR /galaxy-central
 
 RUN add-tool-shed --url 'http://testtoolshed.g2.bx.psu.edu/' --name 'Test Tool Shed'
 
 RUN wget https://raw.githubusercontent.com/matteo14c/CorGAT_galaxy/master/Docker/galaxy-CorGAT-tool-list.yml -O $GALAXY_ROOT/tools1.yaml
+
+RUN /tool_deps/_conda/bin/conda update conda
 
 RUN install-tools $GALAXY_ROOT/tools1.yaml && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
