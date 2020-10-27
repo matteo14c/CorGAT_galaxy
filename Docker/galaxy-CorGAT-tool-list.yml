@@ -49,3 +49,8 @@ tools:
   owner: elixir-it 
   tool_panel_section_label: "Coronavirus Annotation tools"
   tool_shed_url: "https://testtoolshed.g2.bx.psu.edu"
+
+- name: corgat_bubble
+  owner: elixir-it 
+  tool_panel_section_label: "Coronavirus Annotation tools"
+  tool_shed_url: "https://testtoolshed.g2.bx.psu.edu"
