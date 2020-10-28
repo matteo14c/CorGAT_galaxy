@@ -183,8 +183,8 @@ sub align
 	my @target_files=@{$_[0]};
 	my $TGdir=$_[1];
 	die("Target directory does not exist\n") unless -e $TGdir;
-	check_exists_command("$dir/nucmer") or die "$0 requires nucmer to align genomes. Please check that nucmer is installed and can be executed. Hit <<which nucmer>> on\n your terminal to understand if the program is correctly installed";
-	check_exists_command("$dir/show-snps") or die "$0 requires show-snps from the mummer package to compute polymorphic sites. Please check that show-snps is installed and can be executed. Hit <<which show-snps>> on\n your terminal to understand if the program is correctly installed";
+	check_exists_command('nucmer') or die "$0 requires nucmer to align genomes. Please check that nucmer is installed and can be executed. Hit <<which nucmer>> on\n your terminal to understand if the program is correctly installed";
+	check_exists_command('show-snps') or die "$0 requires show-snps from the mummer package to compute polymorphic sites. Please check that show-snps is installed and can be executed. Hit <<which show-snps>> on\n your terminal to understand if the program is correctly installed";
 	foreach my $tg (@target_files)
 	{
         	my $name=$tg;
@@ -196,8 +196,8 @@ sub align
         	{
                 	print "output file $name\_ref_qry.snps already in folder. Alignment skipped\n"
         	}else{
-                	system("$dir/nucmer --prefix=ref_qry $refile $tg")==0||die("no nucmer alignment\n");
-                	system("$dir/show-snps -Clr ref_qry.delta > $name\_ref_qry.snps")==0||warn("no nucmer snps $tg\n");
+                	system("nucmer --prefix=ref_qry $refile $tg")==0||die("no nucmer alignment\n");
+                	system("show-snps -Clr ref_qry.delta > $name\_ref_qry.snps")==0||warn("no nucmer snps $tg\n");
         	}
 	}
 }

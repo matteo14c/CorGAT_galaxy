@@ -6,8 +6,8 @@
     <requirement type="package" >mummer</requirement>
   </requirements>
   <command> <![CDATA[
-        wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/858/895/GCF_009858895.2_ASM985889v3/GCF_009858895.2_ASM985889v3_genomic.fna.gz 2>$log &&
-	perl $__tool_directory__/align.pl --multi $infile --out $ofile 2>>$log
+        ###ln -s $__tool_directory__/align.pl . 2>>$log &&
+	perl align.pl --multi $infile --out $ofile 2>>$log
     ]]>
   </command>
 <inputs>
