@@ -1,5 +1,5 @@
 # Docker_CorGAT
-Docker Galaxy [CorGAT flavor](https://github.com/matteo14c/CorGAT) 
+Docker Galaxy [CorGAT flavor](https://github.com/matteo14c/CorGAT/tree/Revision_V1) 
 
 ## How to use 
 - Install Docker follow the [procedure](https://docs.docker.com/engine/install/)
