@@ -10,4 +10,5 @@ Docker Galaxy [CorGAT flavor](https://github.com/matteo14c/CorGAT/tree/Revision_
 ## What to do next:
 Now you have a local copy of the CorGAT Galaxy instance. Please refer to the CorGAT Galaxy [manual](https://corgat.readthedocs.io/en/latest/) for tips and instructions on how to execute your analyses  
 
-### more info on galaxy-docker usage at https://github.com/bgruening/docker-galaxy-stable
+## Galaxy dockers 
+For a more detailed refence on the usage and configuration of Docker based Galaxy instances see: https://github.com/bgruening/docker-galaxy-stable
