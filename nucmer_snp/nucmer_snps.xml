@@ -27,7 +27,6 @@
 	**What it does**
 
 	This simple wrapper is used to align a SARS-CoV-2 genome assembly to the reference genome as available from Genbank (NC_045512).
-	A copy of the genome, is also found on this Galaxy server under Shared Data -> Data Libraries -> SARS-CoV-2-REF.
 	This wrapper run nucmer with default parameters to align genomes. Variants are extracted from the nucmer delta file by the
 	show-snps utility.
 	Output files obtained from this software should be concatenated with the join_nucmer utility before functional annotation.
