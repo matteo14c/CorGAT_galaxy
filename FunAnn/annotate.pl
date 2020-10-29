@@ -7,9 +7,6 @@ unless (-e "CorGAT")
    system("gzip -d GCF_009858895.2_ASM985889v3_genomic.fna.gz");
 }
 
-
-
-
 $gen_code="genetic_code";
 die("need genetic code file in the current folder\n") unless -e "genetic_code";
 open(IN,$gen_code);

@@ -1,0 +1,43 @@
+<tool id="multiFasCorGAT" name="multiFC" version="1">
+  <description> Process multi-fasta files to derive a phenetic matrix of genetic variants.</description>
+  <requirements>
+    <requirement type="package" >perl</requirement>
+    <requirement type="package" >wget</requirement>
+    <requirement type="package" >mummer</requirement>
+  </requirements>
+  <command> <![CDATA[
+        ln -s $__tool_directory__/align.pl . 2>>$log &&
+	perl align.pl --multi $infile --out $ofile 2>>$log
+    ]]>
+  </command>
+<inputs>
+	<param format="fasta" name="infile" type="data" label="multifasta" help="Multifasta file of SARS-CoV-2 genomes"/>
+</inputs>
+
+<outputs>
+	<data format="txt" name="log" label="${tool.name} on ${on_string}: log file "/>
+	<data format="tsv" name="ofile" label="${tool.name} on ${on_string}: tsv "/>
+</outputs>
+
+<stdio>
+</stdio>
+
+<tests>
+	<test>
+	</test>
+</tests>
+
+<help>
+	        **What it does?**
+
+        This tool is used to align SARS-CoV-2 genes, in multifasta format. Genomes will be aligned to the reference SARS-CoV-2 genome using nucmer.
+	The output will consist in a single tabular file with as may columns as the number of genomes provided in input. And as many rows as the 
+	number of variants observed in the genomes. For every genome assembly and variant a simple binary code 1= present, 0=absent will be used to 
+	indicate whether that genome carries a specific variant. This table should be provided to the FunAnn tool to obtain the functional annotation 
+	of the variants.
+
+</help>
+  <citations>
+  </citations>
+</tool>
+

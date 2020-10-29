@@ -1,5 +1,5 @@
 <tool id="join_nucmer" name="join_nucmer" version="">
-  <description></description>
+  <description>Join multiple mummer output files in a phenetic matrix</description>
   <command>
  <![CDATA[
 	perl $__tool_directory__/join_nucmer.pl $output_file ${" ".join(map(str, $input_file))}
