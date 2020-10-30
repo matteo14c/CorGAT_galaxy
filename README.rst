@@ -28,4 +28,12 @@ Galaxy tools and wrappers for `CorGAT <https://github.com/matteo14c/CorGAT>`_
 :Description:
        This program reads a tabular formatted file, in pseudo vcf format, as obtained from the **join_nucmer** utility and performs functional annotation of SARS-CoV-2 variants. Please notice that the program performs minimum error checks, and that it is designed to work exclusively with the reference annotation of the SARS-CoV-2 genome as available from Genbank.
  
-:Galaxy wrapper: `FunAnn <https://testtoolshed.g2.bx.psu.edu/repository?repository_id=0e8d0775db86a736>`_
+:Galaxy wrapper: `FunAnn <https://testtoolshed.g2.bx.psu.edu/view/elixir-it/corgat_funct_annot/7e7168ebc150>`_
+
+----------
+``multifc``
+----------
+:Description:
+        This tool is used to align SARS-CoV-2 genes, in multifasta format. Genomes will be aligned to the reference SARS-CoV-2 genome using nucmer.The output will consist in a single tabular file with as may columns as the number of genomes provided in input. And as many rows as the number of variants observed in the genomes. For every genome assembly and variant a simple binary code 1= present, 0=absent will be used to indicate whether that genome carries a specific variant. This table should be provided to the FunAnn tool to obtain the functional annotation of the variants.
+
+:Galaxy wrapper: `multiFC <https://testtoolshed.g2.bx.psu.edu/view/elixir-it/corgat_multifc/3f6d4e4340e8>`_

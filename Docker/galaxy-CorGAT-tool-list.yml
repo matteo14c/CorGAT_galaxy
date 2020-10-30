@@ -35,7 +35,7 @@ tools:
   owner: iuc 
   tool_panel_section_label: "Genome Alignment"
 
-- name: corgat_funann 
+- name: corgat_funct_annot 
   owner: elixir-it 
   tool_panel_section_label: "Coronavirus Annotation tools"
   tool_shed_url: "https://testtoolshed.g2.bx.psu.edu"
@@ -50,3 +50,7 @@ tools:
   tool_panel_section_label: "Coronavirus Annotation tools"
   tool_shed_url: "https://testtoolshed.g2.bx.psu.edu"
 
+- name: corgat_multifc 
+  owner: elixir-it 
+  tool_panel_section_label: "Coronavirus Annotation tools"
+  tool_shed_url: "https://testtoolshed.g2.bx.psu.edu"
