@@ -18,6 +18,8 @@ RUN wget https://raw.githubusercontent.com/matteo14c/CorGAT_galaxy/master/Docker
 
 RUN /tool_deps/_conda/bin/conda update conda
 
+RUN chown -R 1450:1450 /tool_deps/_conda/pkgs/cache/
+
 RUN install-tools $GALAXY_ROOT/tools1.yaml && \
     /tool_deps/_conda/bin/conda clean --tarballs --yes > /dev/null && \
     rm /export/galaxy-central/ -rf
