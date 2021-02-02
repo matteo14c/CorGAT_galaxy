@@ -1,10 +1,10 @@
 $fss=13468;
 
-unless (-e "CorGAT")
-
+unless (-e "GCF_009858895.2_ASM985889v3_genomic.fna")
 {
-   system("wget -i https://raw.githubusercontent.com/matteo14c/CorGAT_galaxy/dev/ann.txt");
-   system("gzip -d GCF_009858895.2_ASM985889v3_genomic.fna.gz");
+	
+	system("wget -i https://raw.githubusercontent.com/matteo14c/CorGAT_galaxy/master/ann.txt");
+	system("gzip -d GCF_009858895.2_ASM985889v3_genomic.fna.gz");
 }
 
 $gen_code="genetic_code";
@@ -16,7 +16,7 @@ while(<IN>)
 	$code{$triplet}=$oneL;
 }
 
-$genome="GCF_009858895.2_ASM985889v3_genomic.fna";
+$genome="GCF_009858895.2_ASM985889v3_genomic.fna ";
 die("need reference genome file in the current folder\n") unless -e "GCF_009858895.2_ASM985889v3_genomic.fna";
 open(IN,$genome);
 while(<IN>)
@@ -58,10 +58,10 @@ while(<IN>)
 		$res=$seq_res[$i];
 	}
 }
-%AF_data=%{read_simple_table("af_data_new.csv")};
+%AF_data=%{read_simple_table("AF_current.csv")};
 %MFE_data=%{read_simple_table("MFE_annot.csv")};
 %epi_data=%{read_epitopes("epitopes_annot.csv")};
-%hyphy_data=%{read_hyphy("hyphy_novel.csv")};
+%hyphy_data=%{read_hyphy("hyphy_current.csv")};
 
 
 
@@ -172,7 +172,7 @@ sub annot_CDS
 		}elsif ($mod==0){
 			$triplet=substr($seq,$pos-3,3);
 			@Bs=split('',$triplet);
-			die("3\n $triplet b:$Bs[2] r:$ref")unless ($Bs[2] eq $ref);
+			die("$_ 3\n $triplet b:$Bs[2] r:$ref")unless ($Bs[2] eq $ref);
 			$Bs[2]=$alt;
 		}
 		#print "$pos_inG $relpos $mod @Bs\n";
@@ -280,11 +280,22 @@ sub annot_CDS
 				{
 					$eff.="Ins";
 					$Talt=(translate($Calt,\%code))[1];
+					if ($Cref=~/[ACTG]{1,}/)
+                                        {
+                                                $Cref=~s/\.//g;
+                                                $Tref=(translate($Cref,\%code))[1];
+                                        }
+
 				}
                                 if ($alt=~/\./)
 				{
 					$eff.="Del";
 					$Tref=(translate($Cref,\%code))[1];
+					if ($Calt=~/[ACTG]{1,}/)
+                                        {
+                                                $Calt=~s/\.//g;
+                                                $Talt=(translate($Calt,\%code))[1];
+                                        }
 				}
 				if ($eff=~/Del/)
 				{
@@ -388,9 +399,9 @@ sub read_hyphy
 		($gene,$pos,@annot)=(split(/\,/));
 		foreach $a (@annot)
 		{
+			$a=~s/{//g;
+			$a=~s/}//g;
 			($ref,$key)=(split(/\:/,$a));
-			$ref=~s/{//g;
-			$ref=~s/}//g;
 			$ref=~s/"//g;
 			$key=~s/"//g;
 			#print "$gene $pos $ref $key\n";
