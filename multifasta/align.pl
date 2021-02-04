@@ -167,9 +167,9 @@ sub split_fasta
 			my $id=$1;
 			$id=(split(/\s+/,$id))[0];
 			$id=~s/\-//g;
-			if ($id=~/\|(EPI.*)\|/)
+			if ($id=~/\|/)
                         {
-                                $id=$1;
+                                $id=(split(/\|/,$id))[1];
                         }
                         $id=~s/\//\_/g;
 			open(OUT,">$tgdir/$id.fasta");
