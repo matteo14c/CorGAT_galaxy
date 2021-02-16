@@ -6,7 +6,7 @@ MAINTAINER Pietro Mandreoli, pietro.mandreoli@unimi.it
 
 ENV GALAXY_CONFIG_BRAND="CorGAT"
 
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update ; apt-get upgrade -y
 
 RUN apt-get install wget -y
 
